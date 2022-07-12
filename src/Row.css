@@ -1,0 +1,41 @@
+.row {
+  margin-left: 20px;
+  color: white;
+}
+
+.row_posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll; /* to add a scroll bar for each row */
+  padding: 20px;
+}
+
+/* to remove the ugly looking scroll bar but keep the scroll proprty */
+/*tell all the browsers to don't display scroll bar */
+.row_posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row_poster {
+  /* will keep the aspect ratio even if we will decrease the size of the screen it will look great! */
+  object-fit: contain;
+  width: 100%;
+  max-height: 100px;
+  margin-right: 10px;
+  transition: tranform 450ms; /*if our posters change size they do it in a slow way. => to provide some smoothness */
+}
+
+.row_poster:hover {
+  /* when we hover over our posters come towards us */
+  transform: scale(
+    1.08
+  ); /* here we are increasing the size and it would do the come up stuff */
+}
+
+.row_posterLarge {
+  max-height: 250px;
+}
+
+.row_posterLarge:hover {
+  transform: scale(1.09);
+}
